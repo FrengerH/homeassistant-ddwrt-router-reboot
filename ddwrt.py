@@ -9,12 +9,11 @@ ATTR_PASS = 'pass'
 
 def setup(hass, config):
     """Set up is called when Home Assistant is loading our component."""
+    host = config[DOMAIN].get(ATTR_HOST)
+    user = config[DOMAIN].get(ATTR_USER)
+    password = config[DOMAIN].get(ATTR_PASS)
 
     def handle_reboot(call):
-        host = call.data.get(ATTR_HOST)
-        user = call.data.get(ATTR_USER)
-        password = call.data.get(ATTR_PASS)
-
         tn = telnetlib.Telnet(host)
         tn.read_until(b"login: ")
 
@@ -26,7 +25,6 @@ def setup(hass, config):
         tn.write(b"exit\n")
 
         tn.read_all().decode( 'ascii' )
-
 
     hass.services.register(DOMAIN, 'reboot', handle_reboot)
 
