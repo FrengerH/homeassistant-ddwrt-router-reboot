@@ -1,7 +1,7 @@
 import telnetlib
 
 # The domain of your component. Should be equal to the name of your component.
-DOMAIN = 'ddwrt'
+DOMAIN = 'ddwrt_router'
 
 ATTR_HOST = 'host'
 ATTR_USER = 'user'

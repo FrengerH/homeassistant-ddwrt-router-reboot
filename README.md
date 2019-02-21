@@ -7,9 +7,9 @@ This custom component allows you to reboot your dd-wrt router using a service ca
 Place the script in your `/config/custom_components` folder.
 
 ## Configuration
-Add a ddwrt: in your config.yaml this will show the new service `ddwrt.reboot` in home-assistant.
+Add a ddwrt: in your config.yaml this will show the new service `ddwrt_router.reboot` in home-assistant.
 ```yaml
-ddwrt:
+ddwrt_router:
   host: !secret router_host
   user: !secret router_user
   pass: !secret router_pass
