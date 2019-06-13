@@ -1,0 +1,3 @@
+reboot:
+  # Description of the service
+  description: Reboots ddwrt router
